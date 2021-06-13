@@ -12,11 +12,11 @@ def guess(thenum, tries):
         else:
             print("Hint: Above 50.")
     elif tries == 2:
-        print(f"Hint: Number is between {thenum - 20} and {thenum + 20}.")
+        print(f"Hint: Number is between {thenum - random.randint(-1, -20)} and {thenum +  random.randint(1, 20)}.")
     elif tries == 3:
-        print(f"Hint: Number is between {thenum - 10} and {thenum + 10}.")    
+        print(f"Hint: Number is between {thenum - random.randint(-1, -10)} and {thenum + random.randint(1, 10)}.")    
     elif tries >= 4:
-        print(f"Hint: Number is between {thenum - 5} and {thenum + 5}.")
+        print(f"Hint: Number is between {thenum - random.randint(-1, -5)} and {thenum + random.randint(1, 5)}.")
     while essentials.guessnumguessed == False: # had to import var from essentials, otherwise would overwrite local var
         try:
             attempt = int(input('Guess a number between 1 - 100. '))
