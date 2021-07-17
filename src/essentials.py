@@ -6,5 +6,4 @@ def clear():
     else: 
         os.system('clear') # mac & linux syntax
 
-guessnumguessed = False
 
