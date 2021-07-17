@@ -1,17 +1,33 @@
 import random, essentials
-def roll():
+
+def main():
     essentials.clear()
-    num1 = input("What number should be the minimum? ")
-    num2 = input("What number should be the maximum? ")
-    try: # try this
-        diceroll = random.randint(int(num1), int(num2)) 
-    except: # if dont work
-        print("Not a number.")
-    else: # if do work
-        return print(f"You rolled a {diceroll}.")
-roll()
-choice = input("Roll again? (Y/N) ")
-if choice.lower() == "y":
-    roll()
-else:
-    exit("Exiting program.")
+    print("*** DICE ROLLER ***")
+    print("Enter q on first prompt to exit program.")
+    while 1:
+        sides = input(f'\nHow many sides? ')
+        if sides == 'q':
+            return
+        try:
+            sides = int(sides)
+            rolls = int(input("How many rolls? "))
+            print(prettifyResults(dieRoll(sides, rolls)))
+        except ValueError:
+            print("Not a number - please enter a correct value.")
+
+def dieRoll(s, r):
+    """Runs the simulation of the die with the values provided by the user."""
+    results = [0] * s
+    for i in range(r):
+        results[random.randrange(s)] += 1
+    return results
+
+def prettifyResults(a):
+    """Prettifies the results, makes it easier to read."""
+    string = "Results:"
+    for i, n in enumerate(a, 1):
+        string += "\n{0}: {1}.".format(i,n)
+    return string
+
+if __name__ == '__main__':
+    main()
