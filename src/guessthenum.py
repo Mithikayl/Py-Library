@@ -8,7 +8,6 @@ def main():
     
 def guessTheNumber():
     number = random.randint(1, 100)
-    print(number)
     tries = []
     while 1:
         try:
