@@ -11,11 +11,13 @@ def main():
 
     dvdLogo = pygame.image.load("dvd-logo-white.png")
     dvdLogoRect = dvdLogo.get_rect()
+    pygame.display.set_caption("DVD Corner")
+    pygame.display.set_icon(dvdLogo)
 
     while True:
         pygame.event.get()
         screen.fill(backgroundColor)
-
+        
         screen.blit(dvdLogo, dvdLogoRect)
         dvdLogoRect = dvdLogoRect.move(dvdLogoSpeed)
 
@@ -39,7 +41,7 @@ if __name__ == "__main__":
         if choice == "n":
             print("Exiting.")
             sys.exit()
-        else:
+        elif choice != "y" or "n":
             print("Invalid choice. Exiting program.")
             sys.exit()
     main()
