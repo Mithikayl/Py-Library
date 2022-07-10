@@ -2,9 +2,9 @@ import random, time, os
 
 def main():
     """A program which can manipulate strings"""
-    # first we take strings from the user
-    inputString = input('What string do you want to manipulate?\n')
-    print(f'Your string is "{inputString}"') # tell the user their string
+    print("[*] String Manipulation")
+    inputString = input('[*] What string do you want to manipulate?\n')
+    print(f'[*] Your string is "{inputString}"') # tell the user their string
     maniType = chooseMani()
     prettifyResults(manipulation(maniType, inputString))
     
@@ -37,7 +37,7 @@ class stringEditing:
         return ''.join(list)   
 
 def chooseMani():
-    print(f'What kind of manipulation do you want? Reply with the number you want.\n1. String to List\n2. Randomise string letters\n3. Pick out all vowels from string.\n4. Get consonants from string')
+    print(f'[?] What kind of manipulation do you want? Reply with the number you want.\n1. String to List\n2. Randomise string letters\n3. Pick out all vowels from string.\n4. Get consonants from string')
     while True:
         try:
             maniChoice = int(input()) # check if it is an int
@@ -46,31 +46,31 @@ def chooseMani():
             else:
                 break
         except ValueError:
-            print("That's not a choice.")
+            print("[-] That's not a choice.")
             continue
     return maniChoice
 
 def manipulation(choice, string):
     manipulateString = stringEditing(string)
     if choice == 1:
-        print("You have chosen to make the string into a list.")
+        print("[*] You have chosen to make the string into a list.")
         time.sleep(2)
         return manipulateString.listifyString()
     elif choice == 2:
-        print("You have chosen to randomise the string.")
+        print("[*] You have chosen to randomise the string.")
         time.sleep(2)
         return manipulateString.randomiseString()
     elif choice == 3:
-        print("You have chosen to get the vowels in the string.")
+        print("[*] You have chosen to get the vowels in the string.")
         time.sleep(2)
         return manipulateString.getVowels()
     elif choice == 4:
-        print("You have chosen to get the consonants in the string.")
+        print("[*] You have chosen to get the consonants in the string.")
         time.sleep(2)
         return manipulateString.getConsonants()        
     
 
 def prettifyResults(result):
-    print(f'The result of your manipulation is:\n{result}') # prettify results
+    print(f'[*] The result of your manipulation is:\n{result}') # prettify results
 
 

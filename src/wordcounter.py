@@ -2,10 +2,11 @@ from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
 def main():
-    print("Choose your file.")
+    print("[*] Word Counter")
+    print("[*] Choose your file.")
     filename = choosefile()
     count = word_count(filename)
-    print("There are", count, "words in", filename, ".")
+    print("[*] There are", count, "words in", filename, ".")
 
 def choosefile():
     Tk().withdraw()
