@@ -1,12 +1,6 @@
+import time, sys
 from urllib.request import urlopen
 from urllib.error import HTTPError
-import itertools, time
-# CODE PLAN:
-# structure so that we intake the urls into a list to be iterated through a check
-# can interpret it into a dictionary but we can do that after
-# after that compile url responses into its own list
-# after this, display it in a topdown view. probably a table to show all results 
-
 def main():
     urls = urlIntake()
     results = urlChecking(urls)
@@ -55,5 +49,3 @@ def displayResults(urllist, resultlist):
         print(f"URL: {i}, Status: {x}")
         time.sleep(1)
 
-if __name__ == "__main__":
-    main()

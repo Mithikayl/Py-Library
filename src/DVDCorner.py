@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, pygame
 
     
 def main():
@@ -28,20 +28,3 @@ def main():
 
         pygame.display.flip()
         time.sleep(10 / 1000)
-
-if __name__ == "__main__":
-    try:
-        import pygame
-    except ImportError:
-        print("You need to have the module pygame to run this program.")
-        choice = input("Install PyGame? (Y/N)\n").lower()
-        if choice == "y":
-            import os
-            os.system('pip install --user pygame')
-        if choice == "n":
-            print("Exiting.")
-            sys.exit()
-        elif choice != "y" or "n":
-            print("Invalid choice. Exiting program.")
-            sys.exit()
-    main()

@@ -29,6 +29,3 @@ def prettifyResults(length, genPass):
     print("Your generated password with {} character length is:".format(length))
     time.sleep(2)
     print(genPass)
-
-if __name__ == "__main__":
-    main()

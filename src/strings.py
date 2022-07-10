@@ -73,7 +73,4 @@ def manipulation(choice, string):
 def prettifyResults(result):
     print(f'The result of your manipulation is:\n{result}') # prettify results
 
-if __name__ == "__main__":
-    os.system('cls')
-    main()
 

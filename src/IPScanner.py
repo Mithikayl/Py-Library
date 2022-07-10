@@ -22,5 +22,4 @@ def main():
 
     print('Time taken:', time.time() - startTime)
 
-if __name__ == '__main__':
-    main()
+
